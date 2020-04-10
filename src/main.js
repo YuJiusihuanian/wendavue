@@ -1,7 +1,7 @@
 //vue.js
 import Vue from 'vue'
 //首页模块
-import App from './App.vue'
+/* import App from './App.vue' */
 //状态管理器
 import store from './store'
 //路由管理器
@@ -24,10 +24,15 @@ Vue.prototype.$ajax = axios;
 // 将对象的键值取出并挂载到vue的过滤器中，实例化Vue的filter
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
+// 处理刷新的时候vuex被清空但是用户已经登录的情况
+if (window.sessionStorage.user) {
+  store.dispatch('setUserInfo', JSON.parse(window.sessionStorage.user));
+}
 
 //创建vue实例挂载结点上
 new Vue({
+el: '#index',
   store,
   router,
-  render: h => h(App)
-}).$mount('#app')
+/*  render: h => h(App) */
+}).$mount('#inxex')

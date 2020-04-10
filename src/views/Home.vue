@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="Home">
+    <n-avbar></n-avbar>
+    <l-oadmore></l-oadmore>
+    <t-abbar></t-abbar>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import Tabbar from '../components/Tabbar';
+  import Navbar from '../components/Navbar';
+  import Loadmore from '../components/Loadmore.vue';
+  export default{
+    name:'Home',
+    components:{
+      't-abbar':Tabbar,
+      'n-avbar':Navbar,
+      'l-oadmore':Loadmore
+    },
+    methods:{
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+    }
   }
-}
 </script>
+<style scoped>
+
+
+  #Home{
+    width:100%;
+    background-color:#fff;
+  }
+</style>

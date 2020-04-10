@@ -1,27 +1,57 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
+import App from '../App'
+Vue.use(Router);
 
-Vue.use(VueRouter)
-
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
-const router = new VueRouter({
-  routes
+// const Index = resolve => require(['../Index.vue'], resolve);
+const Home = resolve => require(['../views/Home.vue'], resolve);
+const Publish = resolve => require(['../views/Publish.vue'], resolve);
+const Message = resolve => require(['../views/Message.vue'], resolve);
+const More = resolve => require(['../views/More.vue'], resolve);
+const Topic = resolve => require(['../views/Topic.vue'], resolve);
+const User = resolve => require(['../views/User.vue'], resolve);
+export default new Router({
+  mode:'hash',
+  routes: [
+    {
+      path: '/',
+      name: 'App',
+      component: App
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/publish',
+      name: 'Publish',
+      component: Publish
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
+    },
+    {
+      path: '/more',
+      name: 'More',
+      component: More,
+    },
+    {
+      path:'/topic/:id',
+      name:'Topic',
+      component: Topic
+    },
+    {
+      path:'/user/:loginname',
+      name:'User',
+      component:User
+    },
+    {
+      path:'*',
+      name:'All',
+      component:Home
+    }
+  ]
 })
-
-export default router
