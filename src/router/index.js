@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import App from '../App'
-Vue.use(Router);
+import Vue from 'vue/dist/vue.js';
+import VueRouter from 'vue-router'
+import App from '../App.vue'
+Vue.use(VueRouter);
 
 // const Index = resolve => require(['../Index.vue'], resolve);
 const Home = resolve => require(['../views/Home.vue'], resolve);
@@ -10,7 +10,7 @@ const Message = resolve => require(['../views/Message.vue'], resolve);
 const More = resolve => require(['../views/More.vue'], resolve);
 const Topic = resolve => require(['../views/Topic.vue'], resolve);
 const User = resolve => require(['../views/User.vue'], resolve);
-export default new Router({
+export default new VueRouter({
   mode:'hash',
   routes: [
     {

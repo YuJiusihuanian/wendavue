@@ -37,7 +37,6 @@
 <script>
   import utils from '../lib/utils.js'
   import Tabbar from '../components/Tabbar.vue'
-  //import Loadmore from '../components/Loadmore.vue'
   import { mapGetters } from 'vuex'
   import { Toast } from 'mint-ui';
   export default{

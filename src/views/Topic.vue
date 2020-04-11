@@ -84,7 +84,7 @@
             addtext:'<a>来自vue-wenda</a>'
           }
       },
-      computed: {
+      computed: {//对象展开，this.userInfo映射为this.$store.getters.getUserInfo
         ...mapGetters({
           userInfo: 'getUserInfo'
         })

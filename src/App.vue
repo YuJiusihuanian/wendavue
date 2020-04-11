@@ -1,5 +1,6 @@
 <template>
   <div id="App">
+	<router-view></router-view>
   </div>
 </template>
 
@@ -9,10 +10,10 @@
 
   mounted(){
       //首次延迟加载
-      setTimeout(() => {
+     setTimeout(() => {
           this.$router.push({
             name:'Home',
-          });
+          }).catch(err => {err});
       },2000);
   }
 }
