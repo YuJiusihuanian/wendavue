@@ -58,7 +58,7 @@
         this.$ajax({
           method:'post',
           data:tokendata,
-          url:'https://cnodejs.org/api/v1/accesstoken',
+          url:'http://gpnubbs.fangweijun.top/api/v1/accesstoken',
         }).then(function(response){
           let user = {
             loginname:response.data.loginname,

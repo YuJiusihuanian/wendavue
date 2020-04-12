@@ -82,7 +82,7 @@
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            url:'https://cnodejs.org/api/v1/topics',
+            url:'http://gpnubbs.fangweijun.top/api/v1/topics',
             data:addData
 
           }).then(function(res){

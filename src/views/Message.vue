@@ -71,7 +71,7 @@
       this.$ajax({
         method: 'get',
         responseType: 'json',
-        url: 'https://cnodejs.org/api/v1/messages?accesstoken=' + this.userInfo.token,
+        url: 'http://gpnubbs.fangweijun.top/api/v1/messages?accesstoken=' + this.userInfo.token,
       }).then(function(res){
           if(res.data.data.has_read_messages.length > 0){
             this.messageData = res.data.data.has_read_messages;

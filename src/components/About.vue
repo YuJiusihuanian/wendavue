@@ -14,9 +14,9 @@
       <div class="content">
         <h3>关于</h3>
         <ul>
-          <Li>
-            <h4>感谢</h4>
-            <p>感谢cnode提供的api</p>
+          <Li>	
+            <h4>广东技术师范大学</h4>
+            <p>方伟俊毕业设计作品</p>
           </Li>
           <Li>
             <h4>功能</h4>
@@ -29,11 +29,11 @@
           </Li>
           <Li>
             <h4>意见反馈</h4>
-            <p><a href="https://github.com/YuJiusihuanian/wenda/issues">意见||需求||交互||页面||功能</a></p>
+            <p><a href="#">请直接联系本人</a></p>
           </Li>
           <Li>
             <h4>版本</h4>
-            <p>v1.1</p>
+            <p>v1.3</p>
           </Li>
           <Li>
             <h4>登录</h4>

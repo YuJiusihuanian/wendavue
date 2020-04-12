@@ -102,7 +102,7 @@
             this.$ajax({
               method: 'get',
               responseType: 'json',
-              url: 'https://cnodejs.org/api/v1/user/' + loginname ,
+              url: 'http://gpnubbs.fangweijun.top/api/v1/user/' + loginname ,
               data: {},
             }).then(function(res){
                 if(res.data.data && res.data){

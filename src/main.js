@@ -34,7 +34,6 @@ Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
 //创建vue实例挂载结点上
 new Vue({
-/* el: '#app', */
   store,
   router,
 render: h => h(App)
