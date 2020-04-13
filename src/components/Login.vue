@@ -36,7 +36,7 @@
           params:{
             loginname:this.userInfo.loginname
           }
-        })
+        }).catch(err => {err});
       }
     },
 
@@ -75,7 +75,7 @@
             params:{
                 loginname:user.loginname
             }
-          })
+          }).catch(err => {err});
 
 
         }.bind(this)).catch(function(error){
@@ -96,6 +96,7 @@
     width:100%;
     background-color:#fff;
     margin:0 auto;
+	height:12rem;
   }
   #Login .login{
     margin:0 auto;
@@ -109,6 +110,7 @@
     font-size:0.32rem;
     height:1rem;
     margin:0 auto;
+	border-radius:100px 100px 100px 100px;
   }
   #Login .loginname{
     margin:0 auto;

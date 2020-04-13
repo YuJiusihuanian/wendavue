@@ -92,7 +92,7 @@
 
         }).then(function (response) {
           let topics = {// eslint-disable-line no-unused-vars
-            date: response.data.data[0].content,
+            /* date: response.data.data[0].content, */
             length: response.data.length,
           }
           if ( response.data && response.data.data) {
@@ -161,15 +161,21 @@
     height:100%;
     margin-bottom:1rem;
     font-size:0.24rem;
-    margin-top:0.6rem;
+    padding-top:0.8rem;
+	background:#ebebeb;
   }
   #Loadmore .topic{
-    width:100%;
     height:1.4rem;
     position:relative;
     margin-bottom:0.1rem;
     border-bottom:1px solid #ccc;
-    width:100%;
+    width:96%;
+	margin:0.2rem auto;
+	border-radius:15px;
+	background:#fff;
+  }
+  #Loadmore ul .topic:first-child{
+	  
   }
   #Loadmore .topic a{
     width:100%;

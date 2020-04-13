@@ -27,15 +27,15 @@
       selected:function(num){
           if(num){
               switch(num){
-                case '1':this.$router.push({'Home':'home'});
+                case '1':this.$router.push({'Home':'home'}).catch(err => {err});
                 break;
-                case '2':this.$router.push({'Home':'home',query:{tab:'good'}});
+                case '2':this.$router.push({'Home':'home',query:{tab:'good'}}).catch(err => {err});
                   break;
-                case '3':this.$router.push({'Home':'home',query:{tab:'share'}});
+                case '3':this.$router.push({'Home':'home',query:{tab:'share'}}).catch(err => {err});
                   break;
-                case '4':this.$router.push({'Home':'home',query:{tab:'ask'}});
+                case '4':this.$router.push({'Home':'home',query:{tab:'ask'}}).catch(err => {err});
                   break;
-                case '5':this.$router.push({'Home':'home',query:{tab:'job'}});
+                case '5':this.$router.push({'Home':'home',query:{tab:'job'}}).catch(err => {err});
                   break;
               }
           }
@@ -50,6 +50,9 @@
   }
   #Navbar a{
     font-size:0.32rem !important;
+  }
+  .mint-navbar .mint-tab-item{
+	  padding:35px 0;
   }
   .mint-navbar .mint-tab-item.is-selected{
     color:#FDDF6D !important;

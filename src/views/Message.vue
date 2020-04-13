@@ -6,7 +6,7 @@
     </mt-navbar>
 
     <!-- tab-container -->
-    <mt-tab-container v-model="selected">
+    <mt-tab-container v-model="selected" id='main'>
       <mt-tab-container-item id="1">
         <ul>
           <Li></Li>
@@ -14,7 +14,7 @@
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
         <ul>
-          <li class="message" v-for="item in messageData" :key='item'>
+          <li class="message" v-for="(item,index) in messageData" :key='index'>
             <router-link class="messageimg" :to="{name:'User',params:{loginname:item.author.loginname}}">
               <img :src="item.author.avatar_url" alt="">
             </router-link>
@@ -94,6 +94,12 @@
     height:100%;
     background-color:#fff;
 
+  }
+  #Message .mint-navbar .mint-tab-item{
+	  padding:35px 0;
+  }
+  #Message #main{
+	  height:30rem;
   }
   #Message .is-selected{
     color:#FDDF6D !important;

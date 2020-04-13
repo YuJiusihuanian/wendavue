@@ -68,7 +68,7 @@
   #About .btn li{
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
-    height:1rem;
+    height:0.8rem;
     position:relative;
   }
   #About .about{
@@ -78,19 +78,19 @@
   }
   #About .about .imgabout{
     position:absolute;
-    top:50%;
+    top:30%;
     left:5%;
     margin-top:-0.5rem;
     width:0.6rem;
     height:0.6rem;
   }
   #About .about .imgabout img{
-    width:0.6rem;
-    height:0.6rem;
+    width:0.4rem;
+    height:0.4rem;
     /*vertical-align:middle*/
   }
   #About .about .textabout{
-    font-size:0.4rem;
+    font-size:0.3rem;
     position:absolute;
     left:17%;
     top:50%;
@@ -99,14 +99,14 @@
     /*vertical-align:middle*/
   }
   #About .about .imgright img{
-    width:0.6rem;
-    height:0.6rem;
+    width:0.4rem;
+    height:0.4rem;
   }
   #About .about .imgright{
     position:absolute;
     width:0.6rem;
     height:0.6rem;
-    top:50%;
+    top:30%;
     right:0;
     margin-top:-0.5rem;
   }

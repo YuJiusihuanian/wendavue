@@ -17,7 +17,7 @@
       }
     }
 </script>
-<style lang="less">
+<style>
   #Reply{
     width:100%;
     font-size:0.32rem;

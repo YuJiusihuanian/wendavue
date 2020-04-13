@@ -1,10 +1,11 @@
 <template>
   <div id="Publish">
-    <div @click="addTopic" class="addtitle" >点击发表</div>
+    
     <mt-field calss="title" placeholder="请输入标题" v-model="topic.title"></mt-field>
     <mt-picker :itemHeight=50 class="picker" :slots="slots" @change="onValuesChange"></mt-picker>
-    <mt-field class="content" placeholder="请输入发表的内容" type="textarea" rows="35" v-model="topic.content"></mt-field>
+    <mt-field class="content" placeholder="请输入发表的内容" type="textarea" rows="5" v-model="topic.content"></mt-field>
     <t-abbar></t-abbar>
+	<div @click="addTopic" class="addtitle" >点击发表</div>
   </div>
 </template>
 <script>
@@ -49,7 +50,7 @@
             })
             this.$router.push({
               name:'More'
-            })
+            }).catch(err => {err})
             return false;
           }
 
@@ -89,7 +90,7 @@
               if(res.data.success){
                   this.$router.push({
                     name:'Home'
-                  })
+                  }).catch(err => {err})
               }
           }.bind(this)).catch(function(error){
             if(error.data.response){
@@ -175,12 +176,14 @@
     padding-top:0 !important;
   }
   #Publish .addtitle{
-    width:100%;
+    width:80%;
     text-align:center;
     font-size:0.38rem;
     background:#FDDF6D;
     padding:0.26rem 0;
     color:#8a8a8a;
+	margin:0 auto;
+	border-radius:5rem 5rem 5rem 5rem;
   }
   #Publish .toast span{
      font-size:0.32rem !important;

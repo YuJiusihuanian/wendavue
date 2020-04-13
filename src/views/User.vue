@@ -96,7 +96,7 @@
                 })
                 this.$router.push({
                   name:'More'
-                });
+                }).catch(err => {err});
                 return false;
               }
             this.$ajax({
@@ -174,6 +174,7 @@
   }
   #User .list{
     margin-top:0.05rem;
+	height:30rem;
   }
   #User .list .mint-cell{
     height:1rem;

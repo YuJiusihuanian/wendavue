@@ -28,4 +28,11 @@
     width:100%;
     line-height:1;
   }
+  .mint-toast{
+	  border-radius: 0.1rem !important;
+  }
+ .mint-toast-text{
+	 font-size:0.48rem !important;
+	 padding:0.1rem !important;
+ }
 </style>

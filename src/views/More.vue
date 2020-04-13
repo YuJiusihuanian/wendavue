@@ -34,7 +34,7 @@
           params:{
             loginname:this.userInfo.loginname
           }
-        })
+        }).catch(err => {err});
       }
     },
   }

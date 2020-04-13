@@ -23,7 +23,7 @@
       <div class="markdown-body reply">
         <h3>评论 <strong>{{topic.reply_count}}</strong></h3>
           <ul>
-            <li v-for="(item,key) in topic.replies" :key="item">
+            <li v-for="(item,key) in topic.replies" :key="key">
               <div class="infoimg">
                 <p>{{key+1}}楼</p>
                 <router-link :to="{name:'User',params:{loginname:item.author.loginname}}">
@@ -56,7 +56,7 @@
             </li>
           </ul>
       </div>
-      <div class="topicreply">
+      <div class="topicreply" v-show="reply">
         <mt-field v-model="replycontent" class="commenttext" placeholder="请输入发表的内容" type="textarea" rows="6"></mt-field>
         <mt-button @click="Replybtn(false,topic.replies)" size="normal" class="commentbtn" type="default">回复</mt-button>
       </div>
@@ -80,6 +80,7 @@
             curReplyId: '',
             replycontent:'',
             show:'',
+			reply:true,
             replyId:'',
             addtext:'<a>来自vue-wenda</a>'
           }
@@ -142,7 +143,7 @@
             if(!this.userInfo.userId){
                 this.$router.push({
                   name:'More'
-                })
+                }).catch(err => {err})
               Toast({
                 message:'请先登陆！',
                 className:'toast'
@@ -168,7 +169,8 @@
                   if(error.response){
                     Toast({
                       message:error.response.data.error_msg,
-                      className:'toast'
+                      className:'toast',
+/* 					  duration: 50000000 */
                     })
                   }
                 })
@@ -185,6 +187,9 @@
               })
               return false;
             }
+			if(!this.reply){
+				this.reply = true;
+			}
             let time = new Date();
             let data = {
               accesstoken:this.userInfo.token,
@@ -234,6 +239,7 @@
               className:'toast'
             })
           }else{
+			  this.reply = false;
               if(key === this.show){
                   this.show = -1;
               }else{
@@ -241,7 +247,6 @@
                 this.replycontent = '';
                 this.replyId = this.topic.replies[key].id;
                 this.replycontent = '@' + replyname + ' ';
-
               }
           }
         },
@@ -415,10 +420,13 @@
     font-size:0.32rem !important;
   }
   #Topic .commentbtn{
-    width:100%;
+    width:80%;
     font-size:0.32rem;
     height:0.8rem;
     background-color:#FDDF6D;
+	display:block;
+	margin: 0 auto;
+	border-radius:100px 100px 100px 100px;
   }
   #Topic .toast span{
     font-size:0.32rem !important;
